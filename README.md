@@ -1,16 +1,39 @@
-# React + Vite
+# KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Description
+**KeenKeeper** is a simple yet powerful web application designed to help you **keep your friendships alive**. It allows users to track, manage, and nurture their social connections so that no important relationship fades away due to lack of communication.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Technologies Used
+- HTML
+- CSS
+- JavaScript
+- React
+- Tailwind CSS
+- DaisyUI
+- Recharts
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
+- 👥 Track and manage your friends list
+- 📊 Visual insights using charts (Recharts)
+- ⏰ Reminders to stay connected with friends
+- 🎨 Clean, responsive UI with Tailwind CSS & DaisyUI
+- ⚡ Fast and interactive React-based frontend
+- 📱 Mobile-friendly design
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 Goal
+The goal of **KeenKeeper** is to make relationship management simple, visual, and consistent—helping users maintain meaningful friendships over time.
+
+---
+
+## 🛠️ Setup (Optional)
+```bash
+git clone https://github.com/your-username/keenkepper.git
+cd keenkepper
+npm install
+npm run dev
