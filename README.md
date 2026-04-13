@@ -36,4 +36,8 @@ The goal of **KeenKeeper** is to make relationship management simple, visual, an
 git clone https://github.com/your-username/keenkepper.git
 cd keenkepper
 npm install
+<<<<<<< HEAD
 npm run dev
+=======
+npm run dev
+>>>>>>> be1f04aad7f282168a9238f7b6d828d825e99740
