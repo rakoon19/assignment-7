@@ -4,6 +4,7 @@ import Timeline from './Components/Timeline/Timeline.jsx'
 import Stats from './Components/Stats/Stats.jsx';
 import { createBrowserRouter } from "react-router";
 import App from './App.jsx';
+import NotFound from './Components/NotFound.jsx';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ export const router = createBrowserRouter([
         path: '/stats',
         Component: Stats,
       }
-    ]
+    ],
+    errorElement: <NotFound></NotFound>
   },
 ])
