@@ -1,55 +1,93 @@
+import { Link, useLocation } from "react-router";
 import { VscGraphLine } from "react-icons/vsc";
 import { IoTimeOutline } from "react-icons/io5";
 import { BiHomeAlt2 } from "react-icons/bi";
 
-
 const Navbar = () => {
-    return (
-        <div className="navbar bg-base-100 shadow-sm">
-        
-        {/* left */}
-        <div className="navbar-start">
-            <a className="btn btn-ghost text-xl">KeenKeeper</a>
-        </div>
+  const location = useLocation();
 
-        {/* right */}
-        {/* css for active btn - text-white bg-[#244D3F] */}
-        <div className="navbar-end hidden lg:flex gap-2">
-            <button className="btn btn-ghost"><BiHomeAlt2 />Home</button>
-            <button className="btn btn-ghost"><IoTimeOutline />Timeline</button>
-            <button className="btn btn-ghost"><VscGraphLine />
-Stats</button>
-        </div>
+  const isActive = (path) => location.pathname === path;
 
-        {/* mobile with menu */}
-        <div className="navbar-end lg:hidden">
-            <div className="dropdown dropdown-end">
-            
-            <div tabIndex={0} role="button" className="btn btn-ghost">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </div>
+  return (
+    <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
 
-            {/* dropdown menu */}
-            <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40"
+      <div className="navbar-start">
+        <Link to="/" className="btn btn-ghost text-xl font-semibold">
+          KeenKeeper
+        </Link>
+      </div>
+
+
+      <div className="navbar-end hidden lg:flex gap-2">
+        <Link
+          to="/"
+          className={`btn btn-ghost ${isActive("/") ? "text-white bg-[#244D3F]" : ""}`}
+        >
+          <BiHomeAlt2 className="w-5 h-5" />
+          Home
+        </Link>
+
+        <Link
+          to="/timeline"
+          className={`btn btn-ghost ${isActive("/timeline") ? "text-white bg-[#244D3F]" : ""}`}
+        >
+          <IoTimeOutline className="w-5 h-5" />
+          Timeline
+        </Link>
+
+        <Link
+          to="/stats"
+          className={`btn btn-ghost ${isActive("/stats") ? "text-white bg-[#244D3F]" : ""}`}
+        >
+          <VscGraphLine className="w-5 h-5" />
+          Stats
+        </Link>
+      </div>
+
+
+      <div className="navbar-end lg:hidden">
+        <div className="dropdown dropdown-end">
+          <div tabIndex={0} role="button" className="btn btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"   
+              stroke="currentColor"
             >
-                <li><a><BiHomeAlt2 />Home</a></li>
-                <li><a><IoTimeOutline />Timeline</a></li>
-                <li><a><VscGraphLine />Stats</a></li>
-            </ul>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </div>
 
-            </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <Link to="/" className={isActive("/") ? "text-white bg-[#244D3F]" : ""}>
+                <BiHomeAlt2 className="w-5 h-5" /> Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/timeline" className={isActive("/timeline") ? "text-white bg-[#244D3F]" : ""}>
+                <IoTimeOutline className="w-5 h-5" /> Timeline
+              </Link>
+            </li>
+            <li>
+              <Link to="/stats" className={isActive("/stats") ? "text-white bg-[#244D3F]" : ""}>
+                <VscGraphLine className="w-5 h-5" /> Stats
+              </Link>
+            </li>
+          </ul>
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
