@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Chen",
+    "picture": "https://i.pravatar.cc/150?img=5",
+    "email": "sarah.chen@email.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["college", "close friend", "book club"],
+    "bio": "Met freshman year at MIT. We bonded over terrible dining hall food and late-night problem sets. Now she's crushing it as a product manager in SF.",
+    "goal": 7,
+    "next_due_date": "2025-04-18"
+  },
+  {
+    "id": 2,
+    "name": "Marcus Johnson",
+    "picture": "https://i.pravatar.cc/150?img=12",
+    "email": "mjohnson@email.com",
+    "days_since_contact": 28,
+    "status": "overdue",
+    "tags": ["work", "mentor"],
+    "bio": "Former manager who took a chance on me when I was a junior developer. His advice helped shape my career path. We try to catch up quarterly.",
+    "goal": 21,
+    "next_due_date": "2025-04-05"
+  },
+  {
+    "id": 3,
+    "name": "Emma Rodriguez",
+    "picture": "https://i.pravatar.cc/150?img=9",
+    "email": "emma.r@email.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["childhood", "close friend"],
+    "bio": "Neighbors since age 6. We've been through everything together - first day of school, first heartbreaks, college applications. She's a pediatric nurse now.",
+    "goal": 30,
+    "next_due_date": "2025-03-15"
+  },
+  {
+    "id": 4,
+    "name": "David Park",
+    "picture": "https://i.pravatar.cc/150?img=15",
+    "email": "dpark@email.com",
+    "days_since_contact": 19,
+    "status": "almost due",
+    "tags": ["college", "running buddy"],
+    "bio": "Roommate junior year. We started training for marathons together and never stopped. He's run Boston twice now and won't let me forget it.",
+    "goal": 21,
+    "next_due_date": "2025-04-16"
+  },
+  {
+    "id": 5,
+    "name": "Priya Patel",
+    "picture": "https://i.pravatar.cc/150?img=47",
+    "email": "priya.patel@email.com",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": ["work", "close friend", "foodie"],
+    "bio": "Started the same week at our company three years ago. We've tried every restaurant within walking distance of the office. She's the only one who truly gets the office politics.",
+    "goal": 14,
+    "next_due_date": "2025-04-20"
+  },
+  {
+    "id": 6,
+    "name": "Alex Thompson",
+    "picture": "https://i.pravatar.cc/150?img=33",
+    "email": "alex.t@email.com",
+    "days_since_contact": 62,
+    "status": "overdue",
+    "tags": ["high school", "musician"],
+    "bio": "High school garage band days. We thought we'd be rockstars. Now he teaches guitar to kids and I write code, but we still jam when we can.",
+    "goal": 45,
+    "next_due_date": "2025-03-28"
+  },
+  {
+    "id": 7,
+    "name": "Lisa Wong",
+    "picture": "https://i.pravatar.cc/150?img=20",
+    "email": "lisa.wong@email.com",
+    "days_since_contact": 11,
+    "status": "on-track",
+    "tags": ["college", "entrepreneur"],
+    "bio": "Study group partner who went on to start her own sustainable fashion brand. Her hustle is inspiring. We meet monthly to swap business and career advice.",
+    "goal": 14,
+    "next_due_date": "2025-04-17"
+  },
+  {
+    "id": 8,
+    "name": "James Miller",
+    "picture": "https://i.pravatar.cc/150?img=52",
+    "email": "james.miller@email.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["work", "gaming"],
+    "bio": "Met at a hackathon five years ago. We've been gaming together every Friday night since - currently deep into Elden Ring co-op runs.",
+    "goal": 14,
+    "next_due_date": "2025-04-15"
+  }
+]
