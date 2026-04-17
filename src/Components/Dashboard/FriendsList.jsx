@@ -1,11 +1,11 @@
 import Tracker from "./Tracker";
-import Friends from "../FriendDetails/Friends";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 const FriendsList = () => {
   const [friendsdata, setFriendsdata] = useState([]);
-  const [selectedfriend, setSelectedfriend] = useState(null);
-
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadFriends = async () => {
@@ -15,6 +15,8 @@ const FriendsList = () => {
         setFriendsdata(data);
       } catch (error) {
         console.error("Error:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -63,19 +65,10 @@ const FriendsList = () => {
     return status;
   };
 
-  if (selectedfriend) {
-    return (
-      <Friends
-        friend={selectedfriend}
-        onBack={() => setSelectedfriend(null)}
-      />
-    );
-  }
-
   return (
     <div className="flex flex-col gap-10 p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen">
       
-      <Tracker />
+      <Tracker friends={friendsdata} />
 
       <div className="divider"></div>
 
@@ -84,12 +77,17 @@ const FriendsList = () => {
           Your Friends
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {loading ? (
+          <div className="flex justify-center items-center py-12">
+            <div className="loading loading-spinner loading-lg"></div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {friendsdata.map((friend) => (
             <div
               key={friend.id}
-              onClick={() => setSelectedfriend(friend)}
+              onClick={() => navigate(`/friends/${friend.id}`)}
               className="bg-white rounded-xl p-6 flex flex-col items-center gap-3 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all cursor-pointer"
             >
 
@@ -139,6 +137,7 @@ const FriendsList = () => {
           ))}
 
         </div>
+        )}
       </div>
     </div>
   );

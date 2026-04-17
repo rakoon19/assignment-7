@@ -1,60 +1,45 @@
-import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts';
-
-const data = [
-  { name: 'Call', value: 45, color: '#2D4A3E' }, 
-  { name: 'Text', value: 30, color: '#8B3DFF' },  
-  { name: 'Video', value: 25, color: '#3BA85C' }, 
-];
+import { useInteractions } from './Context';
 
 const FriendshipAnalytics = () => {
+  const { interactionStats } = useInteractions();
+
+  const chartData = [
+    { name: 'Calls',  value: interactionStats.Call,  color: '#2D4A3E' },
+    { name: 'Texts',  value: interactionStats.Text,  color: '#8B3DFF' },
+    { name: 'Videos', value: interactionStats.Video, color: '#3BA85C' },
+  ];
+
+  const hasData = interactionStats.Call > 0 || interactionStats.Text > 0 || interactionStats.Video > 0;
+
   return (
-    <div className=" bg-white border border-gray-100 rounded-xl my-10 p-8 w-full max-w-2xl mx-auto">
+    <div className="bg-white border rounded-xl p-8 max-w-2xl mx-auto my-10 shadow-sm">
+      <h2 className="text-2xl font-bold text-gray-800">Friendship Analytics</h2>
+      <p className="text-gray-500 mb-6">Visualizing your interaction habits</p>
 
-      <div className="mb-6">
-        <h2 className="text-3xl font-bold text-slate-800 tracking-tight">
-          Friendship Analytics
-        </h2>
-        <p className="text-sm font-medium text-emerald-800/80 mt-2">
-          By Interaction Type
-        </p>
-      </div>
-
-
-      <div className="h-70 w-full">
-        <ResponsiveContainer width="100%" height="100%" >
-          <PieChart>
-            <Pie
-              data={data}
-              cx="50%"
-              cy="50%"
-              innerRadius={70}
-              outerRadius={95}
-              paddingAngle={6}
-              dataKey="value"
-              startAngle={90}
-              endAngle={450}
-            >
-            {data.map((entry, index) => (
-            <Cell 
-                key={`cell-${index}`} 
-                fill={entry.color} 
-                stroke="none"
-                style={{ outline: 'none' }}
-            />
-            ))}
-            </Pie>
-            <Legend 
-              verticalAlign="bottom" 
-              align="center"
-              iconType="circle" 
-              iconSize={8}
-              formatter={(value) => (
-                <span className="text-gray-500 text-xs font-medium ml-1">{value}</span>
-              )}
-            />
-          </PieChart>
-        </ResponsiveContainer>
+      <div className="h-64 w-full">
+        {hasData ? (
+          <ResponsiveContainer width="100%" height="100%">
+            <PieChart>
+              <Pie
+                data={chartData}
+                dataKey="value"
+                innerRadius={60}
+                outerRadius={80}
+                paddingAngle={5}
+              >
+                {chartData.map((item, index) => (
+                  <Cell key={index} fill={item.color} stroke="none" />
+                ))}
+              </Pie>
+              <Legend iconType="circle" />
+            </PieChart>
+          </ResponsiveContainer>
+        ) : (
+          <div className="flex items-center justify-center h-full text-gray-400 italic text-center">
+            No interactions recorded yet. <br /> Use the buttons to start tracking!
+          </div>
+        )}
       </div>
     </div>
   );

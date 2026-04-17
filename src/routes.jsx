@@ -1,4 +1,5 @@
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
+import FriendsList from './Components/Dashboard/FriendsList.jsx';
 import Friends from './Components/FriendDetails/Friends.jsx';
 import Timeline from './Components/Timeline/Timeline.jsx'
 import Stats from './Components/Stats/Stats.jsx';
@@ -9,25 +10,29 @@ import NotFound from './Components/NotFound.jsx';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <App></App>,
+    element: <App />,
+    errorElement: <NotFound />,
     children: [
       {
         index: true,
-        Component: Dashboard,
+        element: <Dashboard />,
       },
       {
-        path: '/friends',
-        Component: Friends,
+        path: 'friends',
+        element: <FriendsList />,
       },
       {
-        path: '/timeline',
-        Component: Timeline,
+        path: 'friends/:id',
+        element: <Friends />,
       },
       {
-        path: '/stats',
-        Component: Stats,
+        path: 'timeline',
+        element: <Timeline />,
+      },
+      {
+        path: 'stats',
+        element: <Stats />,
       }
     ],
-    errorElement: <NotFound></NotFound>
   },
-])
+]);
